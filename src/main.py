@@ -2,11 +2,13 @@ from reader import getInput
 from checker import getWordList
 from checker import getWrongWords
 from writer import printStringColored
+import os
 
 def __main__():
     inString = getInput()
     wordList = getWordList(inString)
     wrongWords = getWrongWords(wordList)
+    os.system('cls' if os.name == 'nt' else 'clear')
     printStringColored(inString, wrongWords)
 
 if __name__ == "__main__":
