@@ -12,12 +12,12 @@ def getWordList(inString: str) -> list[str]:
         if not word[-1] in validChars:
             newWord = newWord[:-1]
         spaceSplit[i] = newWord
-    return set(spaceSplit)
+    return spaceSplit
 
-def getWrongWords(words: set[str]) -> set[str]:
+def getWrongWords(words: list[str]) -> set[str]:
     s = Speller()
     wrongSet = set()
-    for word in words:
+    for word in set(words):
         if not s.check(word):
             wrongSet.add(word)
     return wrongSet
