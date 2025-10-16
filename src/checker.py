@@ -1,3 +1,4 @@
+from aspell import Speller
 from string import ascii_letters
 
 validChars = set(ascii_letters) | {"'"}
@@ -12,3 +13,11 @@ def getWordList(inString: str) -> list[str]:
             newWord = newWord[:-1]
         spaceSplit[i] = newWord
     return set(spaceSplit)
+
+def getWrongWords(words: set[str]) -> set[str]:
+    s = Speller()
+    wrongSet = set()
+    for word in words:
+        if not s.check(word):
+            wrongSet.add(word)
+    return wrongSet
