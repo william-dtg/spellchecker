@@ -3,11 +3,12 @@ from string import ascii_letters
 validChars = set(ascii_letters) | {"'"}
 
 def getWordList(inString: str) -> list[str]:
-    spaceSplit = inString.split(" ")
+    spaceSplit = [word for word in inString.split(" ") if word != '']
     for i, word in enumerate(spaceSplit):
         newWord = word
-        for letter in word:
-            if not letter in validChars:
-                newWord = newWord.replace(letter, '')
+        if not word[0] in validChars:
+            newWord = newWord[0:]
+        if not word[-1] in validChars:
+            newWord = newWord[:-1]
         spaceSplit[i] = newWord
     return set(spaceSplit)
