@@ -15,11 +15,19 @@
         python312
         python312Packages.colorama
         python312Packages.aspell-python
+        python312Packages.pyinstaller
+        wineWowPackages.stable
+        wget
+        xorg.xvfb
+        xorg.xrandr
+        xvfb-run
       ];
       nativeBuildInputs = [ pkgs.pkg-config ];
-      shellHook = "
-        echo -e \"\\e[1;32mWelcome to the shell\\e[0m\"
-        ";
+      shellHook = ''
+        export WINEPREFIX="$PWD/build/wine-prefix"
+        export WINEARCH=win32
+        echo -e "Welcome to the shell"
+        '';
     };
   };
 }
