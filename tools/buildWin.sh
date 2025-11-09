@@ -23,4 +23,4 @@ xvfb-run -a wine "${PYTHON_EXE_PATH}" \
 wine C:\\Python312\\python.exe -m pip install pyinstaller
 
 mkdir -p ${BUILD_DIR}/specs
-wine pyinstaller src/main.py --onefile --specpath build/specs
+wine pyinstaller -n spellcheck --distpath dist/windows src/main.py --onefile --specpath build/specs

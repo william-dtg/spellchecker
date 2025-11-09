@@ -10,6 +10,8 @@ def __main__():
     wrongWords = getWrongWords(wordList)
     os.system('cls' if os.name == 'nt' else 'clear')
     printStringColored(inString, wrongWords)
+    print("Press enter to quit")
+    input()
 
 if __name__ == "__main__":
     __main__()

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pyinstaller src/main.py --onefile --specpath build/specs
+pyinstaller -n spellcheck --distpath dist/linux src/main.py --onefile --specpath build/specs
